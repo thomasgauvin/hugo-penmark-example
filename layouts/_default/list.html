@@ -4,6 +4,18 @@
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
 
+{{- if .IsHome }}
+<script 
+    type="module" 
+    src="http://localhost:9000/DraftsClient.js"
+    draftsFolder="drafts"
+    postsFolder="content/posts"
+    imagesFolder="static/images"
+    githubUsername="thomasgauvin"
+    githubRepoName="hugo-penmark-example"
+></script>
+{{- end }}
+
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
